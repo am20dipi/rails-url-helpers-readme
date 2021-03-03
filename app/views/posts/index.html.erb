@@ -1,0 +1,16 @@
+
+
+
+<!-- old way to link to another page -->
+<% @posts.each do |post| %>
+  <div><a href='<%= "/posts/#{post.id}" %>'><%= post.title %></a></div>
+<% end %> 
+
+
+<!-- new way to link to a page using link_to -->
+<% @posts.each do |post| %>
+  <div><%= link_to post.title, post_path(post) %></div>
+<% end %> 
+<!-- link_to replaces the a href tag and the post_path gets rid of the need for string interpolation-->
+
+
